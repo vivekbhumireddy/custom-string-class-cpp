@@ -8,8 +8,7 @@ class str
 char *ptr;
 public:
 str(){ // def cons
-    ptr=new char[1];
-    ptr[0]='\0';
+    ptr=0;
 }
 str(const char *s){  /// para cons
 ptr=new char[strlen(s)+1];
@@ -20,6 +19,7 @@ ptr=new char(strlen(obj.ptr)+1);
 strcpy(ptr,obj.ptr);
 }
 ~str(){ // destructor
+if(p1!=0)
 delete[] ptr;
 }
 str operator +(str &obj){ // + opr overload
